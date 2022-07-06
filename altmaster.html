@@ -14,6 +14,8 @@
             margin: 0;
             padding: 0;
             font-family: "montserrat_alternatesregular";
+            background-color: white;
+            position: relative;
         }
         .container{
             height: 100vh;
@@ -22,15 +24,18 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            
 
         }
         .main{
             width: 400px;
-            height: 400px;
+            height: 100px;
             border: solid;
             display: flex;
             flex-direction: column;
             border-radius: 10px;
+            border-color: rgb(66, 66, 105);
+            
 
         }
         #output{
@@ -46,6 +51,9 @@
             margin-left: 4px;
             visibility: visible;
         }
+        #action{
+            margin-left: 4px;
+        }
         @font-face {
 				font-family: 'montserrat_alternatesregular';
 				src: url('montserratalternates-regular-webfont.woff2') format('woff2'),
@@ -54,12 +62,30 @@
 				font-style: normal;
 			}
         button{
-            background-color:blue;
+            background-color:rgb(66, 66, 105);
+            color: white;
             height: 30px;
             width: 80px;
             border-radius: 10px;
             border: none;
             margin: 10px;
+        }
+        button:hover{
+            background-color: orange;
+        }
+        h2{
+            color: rgb(66, 66, 105);
+        }
+        .footer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            width: 100%;
+            background-color: rgb(66, 66, 105);
+            color: white;
+            position: absolute;
+            bottom: 0;
         }
     </style>
 </head>
@@ -74,6 +100,7 @@
         });
         </script>
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=SeWBZUzC"></script>
+   
     <div class="container">
         <h2>Speech to Text</h2>
         <div class="main" id="mainid">
@@ -84,6 +111,9 @@
         </div>
         <button type="button" onclick="runSpeechRecognition()">Proses</button>
         
+    </div>
+    <div class="footer">
+        <p>UNP Kediri</p>
     </div>
     
     <script>
