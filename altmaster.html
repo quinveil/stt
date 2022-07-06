@@ -28,6 +28,12 @@
             border: solid;
 
         }
+        #output{
+            margin-left: 4px;
+        }
+        .hide{
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -50,6 +56,20 @@
             var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
             var recognition = new SpeechRecognition();
             
+            recognition.onstart=function(){
+                document.getElementById("notes").innerHTML="";
+                action.innerHTML="<small>Silahkan berbicara. . . </small>";
+
+            };
+
+            recognition.onespeechend=function(){
+                action.innerHTML="";
+                recognition.stop();
+                responsiveVoice.speak(output, "Indonesian Female");
+            }
+
+            recognition.lang='id-ID';
+            recognition.start();
 
         }
     </script>
