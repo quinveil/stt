@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech to text</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+        .main{
+            width: 400px;
+            height: 400px;
+            border: solid;
+
+        }
+    </style>
+</head>
+<body>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=SeWBZUzC"></script>
+    <div class="container">
+        <h2>Speech to Text</h2>
+        <div class="main">
+            <p id="notes"></p>
+            <span id="action"></span>
+            <div id="output" class="hide"></div>
+        </div>
+        <button type="button" onclick="runSpeechRecognition()">Proses</button>
+    </div>
+    
+    <script>
+        function runSpeechRecognition(){
+            responsiveVoice.speak("saya suka uang", "Indonesian Female");
+        }
+    </script>
+</body>
+</html>
