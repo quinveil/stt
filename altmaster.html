@@ -44,7 +44,13 @@
     
     <script>
         function runSpeechRecognition(){
-            responsiveVoice.speak("saya suka uang", "Indonesian Female");
+            var output = document.getElementById("output");
+            var action = document.getElementById("action");
+
+            var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+            var recognition = new SpeechRecognition();
+            
+
         }
     </script>
 </body>
